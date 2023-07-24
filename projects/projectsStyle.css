@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: secdfont, Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(/fonts/Bruno/BrunoAceSC-Regular.ttf);
+}
+
+@font-face {
+    font-family: secdfont;
+    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: welcomefont;
+    src: url(/fonts/Chokokutai/Chokokutai-Regular.ttf);
+}
+
+:root {
+    --primaryColor: #0ef;
+    --secondaryColor: rgb(174, 0, 255);
+    --fontColor: #e8e8e8;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    font-size: 1em;
+    background: rgba(4, 9, 30, 0.9);
+    color: #e8e8e8;
+}
+
+header {
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 20;
+}
+
+.sticky {
+    transition: all .4s linear;
+    background: rgba(4, 9, 30, 0.6);
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 80%);
+}
+
+nav {
+    width: 100%;
+    padding: 0 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a {
+    color: var(--primaryColor);
+    margin: 1em 0;
+    font-size: 2em;
+}
+
+.logo a i {
+    transition: all 1s;
+}
+
+nav .logo a:hover i {
+    animation: animateBack 1s linear infinite;
+}
+
+@keyframes animateBack {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-0.2em);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.navbar .btn {
+    background: none;
+    color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+    padding: 0.5em 3em;
+    border-radius: 0;
+}
+
+.navbar .btn:hover {
+    background: var(--primaryColor);
+    color: #1d1d1d;
+}
+
+/* nav and header media queries */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+    header {
+        height: 8vh;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    header {
+        height: 8vh;
+    }
+
+    nav {
+        padding: 0 2em;
+    }
+
+    nav .logo a {
+        margin: 0.6em 0;
+        font-size: 1.8em;
+    }
+
+    .navbar .btn {
+        padding: 0.5em 3em;
+        border-radius: 0;
+        font-size: 0.8em;
+    }
+}
+
+/* case study */
+/* Portfolio case study */
+.case-main {
+    position: relative;
+    width: 70%;
+    margin: auto;
+}
+
+.case-main h2 {
+    color: var(--primaryColor);
+    font-weight: 400;
+    padding-bottom: 0.4em;
+}
+
+.case-home {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 25vh;
+}
+
+.case-home-text {
+    padding-top: 40vh;
+}
+
+.case-home-text h1 {
+    font-weight: 600;
+    color: var(--primaryColor);
+    padding: 0.7em;
+}
+
+.case-home-text p {
+    margin-bottom: 1em;
+}
+
+.visit {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    font-size: 1em;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.3em 0.7em;
+}
+
+.visit a {
+    text-decoration: none;
+    padding: 0;
+    position: relative;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.visit ::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--primaryColor);
+    height: 2px;
+    transition: 0.3s ease-out;
+}
+
+.visit a::before {
+    position: absolute;
+    content: "visit";
+    width: 0%;
+    inset: 0;
+    color: var(--primaryColor);
+    overflow: hidden;
+    transition: 0.2s ease-out;
+}
+
+.visit:hover::after {
+    width: 100%;
+}
+
+.visit:hover a::before {
+    width: 100%;
+}
+
+.visit i {
+    color: #fff;
+    transition: 0.2s;
+    position: relative;
+    font-size: 1em;
+    transition-delay: 0.2s;
+}
+
+.visit:hover i {
+    transform: translateX(4px);
+    color: var(--primaryColor);
+}
+
+
+/* project overview */
+.case-overview {
+    width: 100%;
+    margin-bottom: 25vh;
+}
+
+.case-about h4 {
+    color: var(--primaryColor);
+    font-weight: 400;
+}
+
+.case-home-pic {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.2);
+    margin-bottom: 4em;
+}
+
+.case-home-pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.case-tools p {
+    color: #1d1d1d;
+    background: #fff;
+    opacity: .8;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 7px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* challenges and solutions */
+.chall-solu ol {
+    padding-bottom: 5vh;
+}
+
+.chall-solu .visit {
+    position: relative;
+    cursor: pointer;
+    width: 6em;
+    display: flex;
+    font-size: 1em;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.3em 0.6em;
+    border: 2px solid var(--primaryColor);
+    background: var(--primaryColor);
+    margin-bottom: 5vh;
+}
+
+.chall-solu .visit:hover {
+    background: none;
+}
+
+.chall-solu .visit a {
+    text-decoration: none;
+    padding: 0;
+    position: relative;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #1d1d1d;
+}
+
+.chall-solu .visit ::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--primaryColor);
+    height: 2px;
+    transition: 0.5s ease-out;
+}
+
+.chall-solu .visit a::before {
+    position: absolute;
+    content: "visit";
+    width: 0%;
+    inset: 0;
+    color: var(--primaryColor);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+}
+
+.chall-solu .visit:hover::after {
+    width: 100%;
+}
+
+.chall-solu .visit:hover a::before {
+    width: 100%;
+}
+
+.chall-solu .visit i {
+    color: #1d1d1d;
+    transition: 0.3s;
+    position: relative;
+    font-size: 1em;
+    transition-delay: 0.3s;
+}
+
+.chall-solu .visit:hover i {
+    transform: translateX(4px);
+    color: var(--primaryColor);
+}
+
+
+/* case study media queries */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+    .case-main {
+        width: 90%;
+    }
+
+    .case-home {
+        height: 60vh;
+        margin-bottom: 0vh;
+    }
+
+    .case-home-text {
+        padding-top: 20vh;
+    }
+
+    .case-home-pic {
+        height: 40vh;
+    }
+
+    .case-overview {
+        margin-bottom: 20vh;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .case-main {
+        width: 100%;
+    }
+
+    .case-home-pic {
+        height: 20vh;
+    }
+
+    .case-home {
+        height: 40vh;
+        margin-bottom: 10vh;
+    }
+
+    .case-home-text {
+        padding-top: 10vh;
+    }
+
+    .case-overview {
+        margin-bottom: 10vh;
+    }
+}
+
+
+
+/* calculator styles */
+.calc-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.calculator {
+    height: 80%;
+    background: #000;
+    padding: 0.9em;
+}
+
+.calculator .result {
+    color: #fff;
+    background: none;
+}
+
+.calculator .result span {
+    margin-right: 0.4em;
+    font-size: 3em;
+    justify-self: flex-end;
+}
+
+.calculator .items .item {
+    border: 0;
+    outline: 0;
+    height: 3.5em;
+    width: 3.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50%;
+    margin: 0.3em;
+    cursor: pointer;
+}
+
+.calculator .numbers {
+    background: #343434;
+    color: #fff;
+}
+
+.calculator .items .zero {
+    width: 8em;
+    border-radius: 135px;
+}
+
+.calculator .items .topB {
+    color: #000;
+    background: #a5a5a5;
+}
+
+.calculator .rightB {
+    color: #fff;
+    background: #ff9f0a;
+}
+
+/* calculator media queries */
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .calc-container {
+        padding-top: 3vh;
+    }
+}
+
+
+
+/* solar styles */
+.solar-container {
+    height: 100vh;
+}
+
+
+
+/* footer */
+footer {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    background: #1d1d1d;
+    /* margin-top: 10vh; */
+    opacity: 0.8;
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--primaryColor);
+    opacity: 0.8;
+}
+
+footer .container {
+    width: 100%;
+    position: relative;
+    top: 20%;
+}
+
+.f-text {
+    width: 50%;
+}
+
+.f-text h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primaryColor);
+}
+
+.f-text p {
+    font-size: 0.9em;
+}
+
+.f-text a:hover,
+.cp-rt a:hover {
+    opacity: 1;
+    color: var(--primaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+.sm-handles {
+    width: 40%;
+}
+
+.sm-handles a:hover {
+    opacity: 1;
+    color: var(--primaryColor);
+}
+
+.media {
+    cursor: pointer;
+}
+
+.media a i {
+    font-size: 1.5em;
+    padding: 0.5em 0em 1em 1em;
+}
+
+.b-line {
+    position: absolute;
+    top: 75%;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 2px;
+    background: #fff;
+}
+
+.cp-rt {
+    text-align: center;
+}
+
+.end {
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7em;
+}
+
+/* footer media queries */
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+    footer {
+        height: 60vh;
+    }
+
+    footer .container {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    footer {
+        height: 30vh;
+        font-size: 0.6em;
+    }
+
+    footer .container {
+        position: relative;
+        width: 100%;
+        height: 40%;
+        top: 15%;
+    }
+
+    .f-text {
+        margin-bottom: 1.5em;
+    }
+
+    .f-text h2 {
+        font-size: 2em;
+    }
+
+    .media a i {
+        font-size: 1.3em;
+        padding: 0.5em 0em 1em 0.5em;
+    }
+
+    .sm-handles p a {
+        font-size: 0.6em;
+    }
+}
