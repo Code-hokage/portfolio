@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: myfont;
-    src: url(/fonts/Bruno/BrunoAceSC-Regular.ttf);
+    src: url(../My_portfolio_site/fonts/Bruno/BrunoAceSC-Regular.ttf);
 }
 
 @font-face {
     font-family: secdfont;
-    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../My_portfolio_site/fonts/Poppins/Poppins-Regular.ttf);
 }
 
 :root {
