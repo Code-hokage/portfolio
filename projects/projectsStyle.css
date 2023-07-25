@@ -9,17 +9,17 @@
 
 @font-face {
     font-family: myfont;
-    src: url(/fonts/Bruno/BrunoAceSC-Regular.ttf);
+    src: url(../fonts/Bruno/BrunoAceSC-Regular.ttf);
 }
 
 @font-face {
     font-family: secdfont;
-    src: url(/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: welcomefont;
-    src: url(/fonts/Chokokutai/Chokokutai-Regular.ttf);
+    src: url(../fonts/Chokokutai/Chokokutai-Regular.ttf);
 }
 
 :root {
