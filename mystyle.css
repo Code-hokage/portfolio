@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: secdfont, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
     scroll-behavior: smooth;
 }
 
-@font-face {
+/* @font-face {
     font-family: myfont;
     src: url(../fonts/Bruno/BrunoAceSC-Regular.ttf);
 }
@@ -15,11 +15,12 @@
 @font-face {
     font-family: secdfont;
     src: url(../fonts/Poppins/Poppins-Regular.ttf);
-}
+} */
 
 :root {
     --primaryColor: #0ef;
     --secondaryColor: rgb(174, 0, 255);
+    --myfont: 'Bruno Ace SC', cursive;
 }
 
 body {
@@ -220,7 +221,7 @@ main {
 
 .home-text h1 {
     font-size: 3em;
-    font-family: myfont;
+    font-family: var(--myfont);
 }
 
 .home-text .name {
@@ -237,7 +238,7 @@ main {
     position: relative;
     width: 60%;
     height: 20%;
-    margin-top: 3em;
+    margin-top: 2.5em;
     text-align: left;
     font-size: 1em;
     font-weight: 500;
@@ -555,7 +556,7 @@ main {
     margin-bottom: 25px;
     font-size: 1.5em;
     color: var(--primaryColor);
-    font-family: myfont;
+    font-family: var(--myfont);
     letter-spacing: 4px;
 }
 
@@ -568,7 +569,7 @@ main {
 .skills h2 {
     font-size: 1.5em;
     margin-bottom: 1em;
-    font-family: myfont;
+    font-family: var(--myfont);
     color: var(--primaryColor);
 }
 
