@@ -2,30 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: secdfont, Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
     scroll-behavior: smooth;
-}
-
-@font-face {
-    font-family: myfont;
-    src: url(/fonts/Bruno/BrunoAceSC-Regular.ttf);
-}
-
-@font-face {
-    font-family: secdfont;
-    src: url(/fonts/Poppins/Poppins-Regular.ttf);
-}
-
-@font-face {
-    font-family: welcomefont;
-    src: url(/fonts/Chokokutai/Chokokutai-Regular.ttf);
 }
 
 :root {
     --primaryColor: #0ef;
     --secondaryColor: rgb(174, 0, 255);
     --fontColor: #e8e8e8;
+    --myfont: 'Bruno Ace SC', Arial;
+    --welcomefont: 'Chokokutai', cursive; 
 }
 
 body {
@@ -39,8 +26,8 @@ body {
 
 header {
     position: relative;
-    height: 10vh;
-    width: 100vw;
+    /* height: 10vh; */
+    width: 100%;
     position: fixed;
     z-index: 20;
 }
@@ -150,7 +137,7 @@ nav .logo a:hover i {
     color: var(--primaryColor);
     font-size: 6em;
     font-weight: 500;
-    font-family: welcomefont;
+    font-family: var(--welcomefont);
 }
 
 /* header and home media queries */
@@ -600,7 +587,7 @@ nav .logo a:hover i {
     color: var(--primaryColor);
     font-size: 2em;
     font-weight: 400;
-    font-family: myfont;
+    font-family: var(--myfont);
     text-transform: uppercase;
     margin-bottom: 1em;
 }
@@ -876,7 +863,7 @@ nav .logo a:hover i {
 /* Testimonials */
 .testimonials {
     font-size: 0.8em;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .testi-box {
@@ -939,9 +926,9 @@ nav .logo a:hover i {
 
 /* drawings branding meadia queries */
 @media screen and (min-width: 760px) and (max-width: 1024px) {
-    .testimonials {
+    /* .testimonials {
         height: 90vh;
-    }
+    } */
 
     .testi-pic {
         height: 5em;
@@ -950,9 +937,9 @@ nav .logo a:hover i {
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
-    .testimonials {
+    /* .testimonials {
         height: 115vh;
-    }
+    } */
 
     .testi-box {
         padding: 1.5em;
@@ -975,10 +962,11 @@ nav .logo a:hover i {
 /* footer */
 footer {
     position: relative;
-    height: 40vh;
+    /* height: 40vh; */
+    padding: 3em;
     width: 100%;
     background: #1d1d1d;
-    /* margin-top: 10vh; */
+    margin-top: 10vh;
     opacity: 0.8;
     color: #fff;
 }
@@ -992,7 +980,7 @@ footer a {
 footer .container {
     width: 100%;
     position: relative;
-    top: 20%;
+    top: 15%;
 }
 
 .f-text {
@@ -1031,7 +1019,7 @@ footer .container {
 
 .media a i {
     font-size: 1.5em;
-    padding: 0.5em 0em 1em 1em;
+    padding: 0em 0em 0.5em 1em;
 }
 
 .b-line {
@@ -1049,10 +1037,10 @@ footer .container {
     text-align: center;
 }
 
-.end {
+.end-text {
     width: 100%;
     position: absolute;
-    bottom: 4px;
+    top: 95%;
     right: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1062,9 +1050,9 @@ footer .container {
 /* footer media queries */
 
 @media screen and (min-width: 760px) and (max-width: 1024px) {
-    footer {
+    /* footer {
         height: 60vh;
-    }
+    } */
 
     footer .container {
         width: 100%;
@@ -1074,7 +1062,7 @@ footer .container {
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
     footer {
-        height: 30vh;
+        /* height: 30vh; */
         font-size: 0.6em;
     }
 

@@ -7,25 +7,15 @@
     scroll-behavior: smooth;
 }
 
-/* @font-face {
-    font-family: myfont;
-    src: url(../fonts/Bruno/BrunoAceSC-Regular.ttf);
-}
-
-@font-face {
-    font-family: secdfont;
-    src: url(../fonts/Poppins/Poppins-Regular.ttf);
-} */
-
 :root {
     --primaryColor: #0ef;
     --secondaryColor: rgb(174, 0, 255);
-    --myfont: 'Bruno Ace SC', cursive;
+    --myfont: 'Bruno Ace SC', Arial;
 }
 
 body {
     overflow-x: hidden;
-    font-size: 1.1em;
+    font-size: 1em;
     background: rgba(4, 9, 30, 0.9);
 }
 
@@ -39,7 +29,7 @@ hr {
 header {
     position: relative;
     /* height: 12vh; */
-    width: 100vw;
+    width: 100%;
     position: fixed;
     z-index: 20;
 }
@@ -412,6 +402,13 @@ main {
     color: #fff;
 }
 
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+    background: #252525;
+    color: #fff;
+}
+
 .media-handles .fa-brands {
     color: var(--primaryColor);
 }
@@ -669,9 +666,9 @@ main {
 
 .work-box {
     position: relative;
-    padding: 2em;
-    height: 34em;
-    width: 45%;
+    padding: 1em;
+    height: 30em;
+    width: 40%;
     margin: 1.5em;
     text-align: center;
     background: rgba(4, 9, 30, 0.4);
@@ -682,13 +679,24 @@ main {
     /* box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.1); */
 }
 
+.work-box a{
+    text-decoration: none;
+    opacity: 1;
+    color: var(--primaryColor);
+}
+
+.work-box a:hover{
+    opacity: 1;
+    color: var(--primaryColor);
+}
+
 .work-box:hover{
     box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.1); 
 }
 
 .work-box .proj-img {
     position: relative;
-    height: 70%;
+    height: 60%;
     width: 100%;
 }
 
@@ -701,9 +709,9 @@ main {
     object-fit: contain;
 }
 
-.layer {
+/* .layer {
     height: 30%;
-}
+} */
 
 .layer .visit {
     position: relative;
@@ -799,7 +807,7 @@ main {
     .work-box {
         position: relative;
         padding: 1em;
-        height: 34em;
+        height: 30em;
         width: 100%;
         margin: 1em;
     }
@@ -850,7 +858,13 @@ form .cont {
 textarea {
     margin: 1em 0 1em 0;
     width: 100%;
+    /* height: 6em; */
+    max-height: 10em;
     position: relative;
+}
+
+.form textarea{
+    height: 6em;
 }
 
 .form-input input,
@@ -864,7 +878,7 @@ textarea {
     background: transparent;
     border-radius: none;
     width: 100%;
-    resize: none;
+    /* resize: none; */
 }
 
 .form-input label {
@@ -877,6 +891,16 @@ textarea {
     pointer-events: none;
     transition: all 0.5s ease;
     text-transform: uppercase;
+}
+
+.form-input input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    opacity: 0;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder{
+    opacity: 1;
 }
 
 .form-input :is(input:focus, input:valid)~label {
@@ -976,7 +1000,7 @@ footer {
     /* height: 40vh; */
     padding: 3em;
     width: 100%;
-    background: #1d1d1d;
+    /* background: #1d1d1d; */
     margin-top: 10vh;
     opacity: 0.8;
     color: #fff;
@@ -991,7 +1015,7 @@ footer a {
 footer .container {
     width: 100%;
     position: relative;
-    top: 20%;
+    top: 15%;
 }
 
 .f-text {
@@ -1030,7 +1054,7 @@ footer .container {
 
 .media a i {
     font-size: 1.5em;
-    padding: 0.5em 0em 1em 1em;
+    padding: 0em 0em 0.5em 1em;
 }
 
 .b-line {
@@ -1048,10 +1072,10 @@ footer .container {
     text-align: center;
 }
 
-.end {
+.end-text {
     width: 100%;
     position: absolute;
-    bottom: 4px;
+    top: 95%;
     right: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
