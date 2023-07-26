@@ -2,19 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: secdfont, Arial, Helvetica, sans-serif;
+    font-family: secdfont, Arial, sans-serif;
     letter-spacing: 1px;
     scroll-behavior: smooth;
 }
 
 @font-face {
     font-family: myfont;
-    src: url(../My_portfolio_site/fonts/Bruno/BrunoAceSC-Regular.ttf);
+    src: url(../fonts/Bruno/BrunoAceSC-Regular.ttf);
 }
 
 @font-face {
     font-family: secdfont;
-    src: url(../My_portfolio_site/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
 }
 
 :root {
@@ -24,7 +24,7 @@
 
 body {
     overflow-x: hidden;
-    font-size: 1em;
+    font-size: 1.1em;
     background: rgba(4, 9, 30, 0.9);
 }
 
@@ -37,7 +37,7 @@ hr {
 /* header with nav */
 header {
     position: relative;
-    height: 12vh;
+    /* height: 12vh; */
     width: 100vw;
     position: fixed;
     z-index: 20;
@@ -52,7 +52,7 @@ header {
 
 nav {
     width: 100%;
-    padding: 0 5em;
+    padding: 0 4em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,7 +83,7 @@ nav .logo h2 {
 /* navbar toggler */
 .navbar-toggler i {
     color: var(--primaryColor);
-    font-size: 1.5rem;
+    font-size: 1.5em;
     flex-basis: 15%;
 }
 
@@ -151,13 +151,13 @@ nav .logo h2 {
 .sidebar {
     position: absolute;
     bottom: 30vh;
-    left: 2.5em;
+    left: 2.5rem;
     position: fixed;
 }
 
 .sidebar a {
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
     font-size: 0.9em;
     color: rgba(255, 255, 255, 0.5);
     font-weight: 500;
@@ -183,7 +183,7 @@ nav .logo h2 {
     height: 29vh;
     background: var(--primaryColor);
     bottom: 0;
-    left: 50px;
+    left: 5rem;
     z-index: 5;
 }
 
@@ -196,8 +196,9 @@ main {
 /* Home/Landing page */
 .myhome {
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
+    padding-bottom: 4rem;
 }
 
 .home-content {
@@ -213,7 +214,7 @@ main {
 }
 
 .home-text .welcome {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -236,7 +237,7 @@ main {
     position: relative;
     width: 60%;
     height: 20%;
-    margin-top: 6em;
+    margin-top: 3em;
     text-align: left;
     font-size: 1em;
     font-weight: 500;
@@ -419,7 +420,7 @@ main {
 @media screen and (min-width: 760px) and (max-width: 1024px) {
     header {
         width: 100vw;
-        height: 11vh;
+        /* height: 11vh; */
         position: fixed;
     }
 
@@ -514,8 +515,8 @@ main {
 .myabout {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding-top: 25vh;
+    /* min-height: 100vh; */
+    padding-top: 10rem;
 }
 
 /* about content */
@@ -586,8 +587,8 @@ main {
 
 @media screen and (min-width: 760px) and (max-width: 1024px) {
     .myabout {
-        height: 140vh;
-        padding-top: 20vh;
+        /* height: 140vh; */
+        padding-top: 10rem;
     }
 
     .about-me {
@@ -612,7 +613,7 @@ main {
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
     .myabout {
-        height: 100vh;
+        /* height: 100vh; */
         width: 100%;
         font-weight: 300;
         line-height: 25px;
@@ -650,8 +651,8 @@ main {
 .myworks {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding-top: 20vh;
+    /* min-height: 100vh; */
+    padding-top: 10rem;
 }
 
 .myworks p {
@@ -673,11 +674,15 @@ main {
     margin: 1.5em;
     text-align: center;
     background: rgba(4, 9, 30, 0.4);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
     border-radius: 0.8em;
     color: #fff;
     font-size: 0.9em;
-    box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.1);
+    /* box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.1); */
+}
+
+.work-box:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 238, 255, 0.1); 
 }
 
 .work-box .proj-img {
@@ -807,8 +812,8 @@ main {
 .mycontact {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding-top: 20vh;
+    /* min-height: 100vh; */
+    padding-top: 10rem;
 }
 
 .mycontact .container-lg p {
@@ -942,14 +947,14 @@ textarea {
 @media screen and (min-width: 760px) and (max-width: 1024px) {
     .mycontact {
         width: 100%;
-        height: 150vh;
+        /* height: 150vh; */
     }
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
     .mycontact {
         width: 100%;
-        height: 80vh;
+        /* height: 80vh; */
         left: 0;
         font-size: 0.8em;
     }
@@ -967,7 +972,8 @@ textarea {
 /* footer */
 footer {
     position: relative;
-    height: 40vh;
+    /* height: 40vh; */
+    padding: 3em;
     width: 100%;
     background: #1d1d1d;
     margin-top: 10vh;
@@ -1054,9 +1060,9 @@ footer .container {
 /* footer media queries */
 
 @media screen and (min-width: 760px) and (max-width: 1024px) {
-    footer {
+    /* footer {
         height: 60vh;
-    }
+    } */
 
     footer .container {
         width: 100%;
@@ -1066,7 +1072,7 @@ footer .container {
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
     footer {
-        height: 30vh;
+        /* height: 30vh; */
         font-size: 0.6em;
     }
 
