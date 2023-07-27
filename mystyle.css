@@ -716,18 +716,33 @@ main {
 .layer .visit {
     position: relative;
     cursor: pointer;
-    width: 65px;
+    width: 6em;
     display: flex;
     font-size: 1em;
     gap: 0.4rem;
     align-items: center;
+    border: 2px solid var(--primaryColor);
+    padding: 0.4em;
+    border-radius: 0.6em;
+    margin-right: 0.7em;
+}
+
+.layer .repo{
+    border: 2px solid var(--primaryColor);
+    padding: 0.4em;
+    border-radius: 0.6em;
+}
+
+.layer .repo:hover{
+    background: var(--primaryColor);
+    color: rgba(0, 0, 0, 1);
 }
 
 .layer .visit a {
     text-decoration: none;
     padding: 0;
     position: relative;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     letter-spacing: 2px;
     color: #fff;
 }
