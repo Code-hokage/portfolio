@@ -874,7 +874,7 @@ nav .logo a:hover i {
 .testi-text h2 {
     color: var(--primaryColor);
     text-transform: uppercase;
-    font-family: myfont;
+    font-family: var(--myfont);
     font-weight: 400;
 }
 
