@@ -388,16 +388,16 @@ main {
     color: #fff;
 }
 
-.wrapper .instagram:hover,
+/* .wrapper .instagram:hover,
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before {
     background: #E4405F;
     color: #fff;
-}
+} */
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
+.wrapper .discord:hover,
+.wrapper .discord:hover .tooltip,
+.wrapper .discord:hover .tooltip::before {
     background: #2391f8;
     color: #fff;
 }
@@ -1124,9 +1124,9 @@ footer .container {
         /* top: 15%; */
     }
 
-    .f-text {
-        /* margin-bottom: 1.5em; */
-    }
+    /* .f-text {
+        margin-bottom: 1.5em;
+    } */
 
     .f-text h2 {
         font-size: 2em;
