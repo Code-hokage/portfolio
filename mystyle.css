@@ -935,7 +935,9 @@ textarea:focus::placeholder{
     color: var(--primaryColor);
 }
 
-.form-box form a {
+.form-box form button {
+    background: none;
+    border: none;
     width: 25%;
     left: 34%;
     position: relative;
@@ -952,11 +954,11 @@ textarea:focus::placeholder{
     letter-spacing: 4px;
 }
 
-.form-box a:hover {
+.form-box button:hover {
     color: var(--primaryColor);
 }
 
-.form-box a span {
+.form-box button span {
     position: absolute;
     width: 90%;
     display: block;
@@ -974,7 +976,7 @@ textarea:focus::placeholder{
     }
 }
 
-.form-box a span:nth-child(1) {
+.form-box button span:nth-child(1) {
     bottom: 2px;
     left: -100%;
     width: 100%;
@@ -1003,7 +1005,7 @@ textarea:focus::placeholder{
         width: 80%;
     }
 
-    .form-box form a {
+    .form-box form button {
         width: 50%;
         left: 27%;
     }
