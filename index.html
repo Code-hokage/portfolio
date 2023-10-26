@@ -44,43 +44,9 @@
                 <div class="btn animate__animated animate__fadeInRight">
                     <a>Download Resume</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-                </button>
             </div>
 
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
 
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ADDY</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#home" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#works" class="nav-link">Works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-
-                    <div class="nav-btn">
-                        <a>Download Resume</a>
-                    </div>
-
-                </div>
-            </div>
         </nav>
     </header>
 
@@ -233,7 +199,7 @@
 
             <!--Works section -->
             <section class="myworks" id="works">
-                <div class="container-lg text-center">
+                <div class="container-lg ">
                     <h2 class="section-label">SOME WORKS I HAVE DONE</h2>
                     <p>Here are some of my personal projects. Explore and get a sense of my design
                         aesthetics
@@ -252,7 +218,7 @@
                         <div class="container layer d-flex flex-column align-items-center">
                             <p>This is my Design portfolio that I also created using web dev tools I know. Check it out
                                 to have a sense of my design capabilites.</p>
-                            <div class="visit">
+                            <div class="visit pt-3">
                                 <a href="designPage/designIndex.html">visit</a>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
@@ -263,14 +229,14 @@
                     <div class="work-box d-flex flex-column justify-content-center align-items-center">
 
                         <div class="proj-img mb-1">
-                            <img src="images/caseshot.png" alt="Design Portfolio">
+                            <img src="images/uniquest.png" alt="Design Portfolio">
                         </div>
 
                         <div class="container layer d-flex flex-column align-items-center">
-                            <p>Portfolio case study is an overview of my portfolio site and other projects I have
-                                created.</p>
-                            <div class="visit">
-                                <a href="projects/caseIndex.html">visit</a>
+                            <p>UniQuest Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, unde! Quam et
+                                repellat quos sunt harum nulla porro dolore perferendis.</p>
+                            <div class="visit pt-3">
+                                <a href="https://uni-quest.vercel.app/">visit</a>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>
@@ -287,13 +253,15 @@
                             <p>A calculator I built using ios UI my web dev course at <a
                                     href="https://www.theodinproject.com/">The Odin Project.</a></p>
 
-                            <div class="d-flex justify-content-center align-items-center">
+                            <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+
+                                <a href="https://github.com/Code-hokage/calculator.git" class="repo"
+                                    target="_blank">GitHub Repo</a>
+
                                 <div class="visit"><a href="https://code-hokage.github.io/calculator/"
                                         target="_blank">visit</a>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </div>
-                                <a href="https://github.com/Code-hokage/calculator.git" class="repo"
-                                    target="_blank">GitHub Repo</a>
                             </div>
                         </div>
 
@@ -308,13 +276,15 @@
                         <div class="container layer d-flex flex-column align-items-center">
                             <p>This is a rock-paper-scissors game I built after taking the web dev course at <a
                                     href="https://www.theodinproject.com/">The Odin Project.</a></p>
-                            <div class="d-flex justify-content-center align-items-center">
+                            <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+
+                                <a href="https://github.com/Code-hokage/rock-paper-scissors_game.git" class="repo"
+                                    target="_blank">GitHub Repo</a>
+
                                 <div class="visit"><a href="https://code-hokage.github.io/rock-paper-scissors_game/"
                                         target="_blank">visit</a>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </div>
-                                <a href="https://github.com/Code-hokage/rock-paper-scissors_game.git" class="repo"
-                                    target="_blank">GitHub Repo</a>
                             </div>
                         </div>
 
@@ -325,7 +295,7 @@
 
             <!-- contact section -->
             <section class="mycontact" id="contact">
-                <div class="container-lg text-center">
+                <div class="container-lg ">
                     <h2 class="section-label">CONTACT ME</h2>
                     <p>I'm always open to hiring and collaborating. Reach out and let's create something amazing.
                     </p>
@@ -334,20 +304,20 @@
                 <!-- contact form/box -->
 
                 <div class="form-box">
-                    <form class="form" method="POST" action="/send">
+                    <form class="contact-form" method="POST" action="submit">
                         <div class="cont">Contact Form</div>
                         <div class="form-input">
-                            <input autocomplete="off" type="text" placeholder="ex. Addy Sharawi" required>
+                            <input id="name" type="text" placeholder="ex. Addy Sharawi" required>
                             <label for="name">Name</label>
                         </div>
 
                         <div class="form-input">
-                            <input name="email" type="email" placeholder="ex. addysharawi247@gmail.com" required>
+                            <input id="email" type="email" placeholder="ex. addysharawi247@gmail.com" required>
                             <label for="email">E-mail</label>
                         </div>
 
                         <div class="form-input">
-                            <input type="text"
+                            <input type="text" id="subject"
                                 placeholder="ex. a collaboration proposal, a job offer, a support request, or any other specific topic."
                                 required>
                             <label for="name">Subject</label>
@@ -359,7 +329,7 @@
                             <label for="message">Message</label>
                         </div>
 
-                        <button type="submit">
+                        <button type="submit" value="Submit Message">
                             SEND
                             <span></span>
                         </button>
@@ -375,10 +345,8 @@
                     <div class="f-text text-start">
                         <h2 class="mb-2">ADAMS ADINAN</h2>
                         <p>Designed with rough sketches, coded in Visiual Studio Code. Built with Html, Css, JavaScript
-                            and front-end framework, <a href="https://getbootstrap.com/">Bootstrap.</a> And other tools;
-                            <a href="https://fontawesome.com/">Fontawesome</a> and <a
-                                href="https://animate.style/">Animate.css,</a> and deployed with <a
-                                href="https://pages.github.com/">Github Pages</a>.
+                            and front-end framework, <a href="https://getbootstrap.com/">Bootstrap,</a> and deployed with <a
+                                href="https://vercel.com/">Vercel</a>.
                         </p>
                     </div>
 
