@@ -29,6 +29,7 @@ hr {
 header {
     position: relative;
     /* height: 12vh; */
+    padding: 0 3.5rem;
     width: 100%;
     position: fixed;
     z-index: 20;
@@ -43,7 +44,7 @@ header {
 
 nav {
     width: 100%;
-    padding: 0 3.5rem;
+    /* padding: 0 3.5rem; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -467,14 +468,14 @@ main {
 @media screen and (min-width: 320px) and (max-width: 760px) {
     header {
         width: 100%;
-        height: 8vh;
+        /* height: 8vh; */
         position: fixed;
-        /* padding: 0 2em; */
-    }
-
-    nav {
         padding: 0 2rem;
     }
+
+    /* nav {
+        padding: 0 2rem;
+    } */
 
     .navbar .btn {
         display: none;
@@ -1027,7 +1028,7 @@ textarea:focus::placeholder {
 footer {
     position: relative;
     /* height: 40vh; */
-    padding: 3em;
+    padding: 3rem;
     width: 100%;
     /* background: #1d1d1d; */
     margin-top: 10vh;
@@ -1128,6 +1129,7 @@ footer .container {
     footer {
         width: 100%;
         font-size: 0.6em;
+        padding: 0 0 2rem 0;
     }
 
     footer .container {
