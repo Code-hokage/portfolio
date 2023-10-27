@@ -76,6 +76,7 @@ nav .logo h2 {
     display: none;
     color: var(--primaryColor);
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .mobileNavBar{
@@ -86,7 +87,7 @@ nav .logo h2 {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 1rem 3rem;
+    padding: 1rem 1rem;
     height: 100vh;
     background: rgba(4, 9, 30, 1);
 }
@@ -111,6 +112,7 @@ nav .logo h2 {
     color: var(--primaryColor);
     font-size: 2rem;
     padding-bottom: 2rem;
+    cursor: pointer;
 }
 
 .onMobile{
@@ -172,6 +174,7 @@ nav .logo h2 {
 .sidebar a i {
     font-size: 1.5rem;
     margin-right: 6px;
+    cursor: pointer;
 }
 
 /* line below side navbar */
@@ -466,11 +469,11 @@ main {
         width: 100%;
         height: 8vh;
         position: fixed;
-        padding: 0 2em;
+        /* padding: 0 2em; */
     }
 
     nav {
-        padding: 0 1em;
+        padding: 0 2rem;
     }
 
     .navbar .btn {
@@ -942,11 +945,14 @@ textarea:focus::placeholder {
     color: var(--primaryColor);
 }
 
+/* .sendBtn{
+    border: 2px solid crimson;
+} */
+
 .form-box form button {
     background: none;
     border: none;
     width: 25%;
-    left: 34%;
     position: relative;
     display: block;
     padding: 10px 20px;
@@ -957,7 +963,7 @@ textarea:focus::placeholder {
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     letter-spacing: 4px;
 }
 
@@ -1014,7 +1020,6 @@ textarea:focus::placeholder {
 
     .form-box form button {
         width: 50%;
-        left: 27%;
     }
 }
 
