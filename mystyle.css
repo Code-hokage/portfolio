@@ -43,7 +43,7 @@ header {
 
 nav {
     width: 100%;
-    padding: 0 4em;
+    padding: 0 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +51,7 @@ nav {
 
 nav .logo {
     color: var(--primaryColor);
-    padding: 0.7rem 0;
+    /* padding: 0.7rem 0; */
 }
 
 nav .logo h2 {
@@ -72,6 +72,59 @@ nav .logo h2 {
 }
 
 /* navbar toggler */
+.toggler{
+    display: none;
+    color: var(--primaryColor);
+    font-size: 2rem;
+}
+
+.mobileNavBar{
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem 3rem;
+    height: 100vh;
+    background: rgba(4, 9, 30, 1);
+}
+    
+.mobNav-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 2rem;
+    width: 100%;
+    border-top: 2px solid var(--primaryColor);
+}
+
+.mobileNavBar .close{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.mobileNavBar .fa-x{
+    color: var(--primaryColor);
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.onMobile{
+    display: flex;
+}
+
+.mobNav-items a{
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    text-align: center;
+}
 
 /* body */
 .web-content {
@@ -83,6 +136,7 @@ nav .logo h2 {
 }
 
 /* Active side navbar */
+.mobNav-items a.active,
 .sidebar a.active {
     color: var(--primaryColor);
     margin-left: 1.7em;
@@ -106,12 +160,15 @@ nav .logo h2 {
     text-align: center;
 }
 
+.mobNav-items a:hover,
+.mobNav-items a i:hover,
 .sidebar a:hover,
 .sidebar a i:hover {
     opacity: 0.8;
     color: var(--primaryColor);
 }
 
+.mobNav-items a i,
 .sidebar a i {
     font-size: 1.5rem;
     margin-right: 6px;
@@ -146,7 +203,7 @@ main {
 .home-content {
     position: relative;
     color: var(--primaryColor);
-    height: 70%;
+    /* height: 70%; */
     width: 100%;
     top: 20vh;
 }
@@ -178,7 +235,7 @@ main {
 .datetime {
     position: relative;
     width: 60%;
-    height: 20%;
+    /* height: 20%; */
     margin-top: 2rem;
     text-align: left;
     font-size: 1rem;
@@ -420,7 +477,7 @@ main {
         display: none;
     }
 
-    .navbar-toggler {
+    .toggler{
         display: flex;
     }
 
@@ -809,8 +866,8 @@ form .cont {
     font-size: 1.6em;
     font-weight: 500;
     color: #e8e8e8;
-    margin-bottom: 25px;
-    margin-top: 15px;
+    /* margin-bottom: 25px;
+    margin-top: 15px; */
     text-align: center;
 }
 
@@ -952,7 +1009,7 @@ textarea:focus::placeholder {
     }
 
     .form-box {
-        width: 80%;
+        width: 90%;
     }
 
     .form-box form button {
@@ -1064,7 +1121,7 @@ footer .container {
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
     footer {
-        /* height: 30vh; */
+        width: 100%;
         font-size: 0.6em;
     }
 
@@ -1075,10 +1132,6 @@ footer .container {
         margin-bottom: 5em;
         /* top: 15%; */
     }
-
-    /* .f-text {
-        margin-bottom: 1.5em;
-    } */
 
     .f-text h2 {
         font-size: 2em;

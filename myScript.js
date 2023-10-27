@@ -4,12 +4,23 @@ window.addEventListener("scroll", function () {
     navbar.classList.toggle("sticky", window.scrollY > 0)
 });
 
-//collapse nav
+//Responsive nav
+const toggler = document.querySelector('.toggler i');
+const mobileNav = document.querySelector('.mobileNavBar');
+const close = document.querySelector('.close i');
+
+toggler.addEventListener('click', () => {
+   mobileNav.classList.add('onMobile');
+});
+
+close.addEventListener('click', () => {
+    mobileNav.classList.remove('onMobile');
+});
 
 // active side navbar
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.sidebar a');
-let icons = document.querySelectorAll('.sidebar a i');
+let navLinks = document.querySelectorAll('.sidebar a, .mobNav-items a');
+let icons = document.querySelectorAll('.sidebar a i, .mobNav-items a i');
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -22,6 +33,7 @@ window.onscroll = () => {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('.sidebar a[href*=' + id + ']').classList.add('active');
+                document.querySelector('.mobileNavBar a[href*=' + id + ']').classList.add('active');
             });
         };
     });
