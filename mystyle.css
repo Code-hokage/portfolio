@@ -428,7 +428,7 @@ main {
 @media screen and (min-width: 760px) and (max-width: 1024px) {
     header {
         position: relative;
-        width: 100%;
+        width: 100vw;
         position: fixed;
     }
 
@@ -467,7 +467,7 @@ main {
 @media screen and (min-width: 320px) and (max-width: 760px) {
     header {
         position: relative;
-        width: 100%;
+        width: 100vw;
         position: fixed;
     }
 
