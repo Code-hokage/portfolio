@@ -71,7 +71,7 @@ nav .logo h2 {
 }
 
 /* navbar toggler */
-.toggler {
+.mob-Navtoggler {
     display: none;
     color: var(--primaryColor);
     font-size: 2rem;
@@ -480,7 +480,7 @@ main {
         display: none;
     }
 
-    .toggler {
+    .mob-Navtoggler {
         display: flex;
     }
 

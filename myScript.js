@@ -5,7 +5,7 @@ window.addEventListener("scroll", function () {
 });
 
 //Responsive nav
-const toggler = document.querySelector('.toggler i');
+const toggler = document.querySelector('.mob-Navtoggler i');
 const mobileNav = document.querySelector('.mobileNavBar');
 const close = document.querySelector('.close i');
 
