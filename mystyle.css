@@ -1144,4 +1144,8 @@ footer .container {
     .sm-handles p a {
         font-size: 0.6rem;
     }
+
+    .gmail a {
+        font-size: 0.3rem;
+    }
 }
