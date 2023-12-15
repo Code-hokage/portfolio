@@ -22,7 +22,8 @@ app.post('/', (req, res) => {
         service: 'gmail',
         auth: {
             user: process.env.EMAIL_USER,
-            pass: 'bjid zyeg wshz trls'
+            pass:  process.env.EMAIL_PASSWORD
+            // pass: 'bjid zyeg wshz trls'
         }
     })
 
@@ -45,6 +46,6 @@ app.post('/', (req, res) => {
     })
 })
 
-// app.listen(PORT, () => {
-//     console.log(`server running on port ${PORT}`)
-// });
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`)
+});
