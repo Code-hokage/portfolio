@@ -77,41 +77,82 @@ function initClock() {
 }
 
 
-// contactForm
+//contact form
 const contactForm = document.querySelector('.contact-form');
-let name = document.getElementById('name');
-let email = document.getElementById('email');
-// let subject = document.getElementById('subject');
-let message = document.getElementById('message');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const subjectInput = document.getElementById('subject');
+const messageInput = document.getElementById('message');
 
-contactForm.addEventListener('submit', (e)=>{
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formData = {
-        name: name.value,
-        email: email.value,
-        // subject: subject.value,
-        message: message.value
+    if (!validateForm()) {
+        return;
     }
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type', 'application/json')
-    xhr.onload = function(){
-        console.log(xhr.responseText);
-        if(xhr.responseText == 'success'){
+    // Disable submit button to prevent multiple submissions
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+
+        if (response.ok) {
             alert('Email sent');
-            name.value = '';
-            email.value = '';
-            // subject.value = '';
-            message.value = '';
-        } else{
-            alert('Something went wromg')
+            contactForm.reset();
+        } else {
+            alert('Something went wrong');
         }
-    };
-
-    xhr.send(JSON.stringify(formData));
-
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An unexpected error occurred');
+    } finally {
+        // Re-enable the submit button after the request completes
+        submitButton.disabled = false;
+    }
 });
+
+
+
+//Form validation
+function validateForm() {
+    let isValid = true;
+
+    // Validate name
+    if (nameInput.value.trim() === '') {
+        alert('Name is required');
+        isValid = false;
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value.trim())) {
+        alert('Invalid email address');
+        isValid = false;
+    }
+
+    // Validate subject
+    if (subjectInput.value.trim() === '') {
+        alert('Subject is required');
+        isValid = false;
+    }
+
+    // Validate message
+    if (messageInput.value.trim() === '') {
+        alert('Message is required');
+        isValid = false;
+    }
+
+    return isValid;
+};
 
 
