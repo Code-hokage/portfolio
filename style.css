@@ -21,7 +21,7 @@ body {
 
 /* header with nav */
 header {
-    width: 100vw;
+    width: 100%;
     position: fixed;
     z-index: 20;
 }
