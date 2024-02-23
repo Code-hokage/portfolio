@@ -22,7 +22,6 @@ body {
 /* header with nav */
 header {
     width: 100vw !important;
-    overflow-x: hidden !important;
     position: fixed;
     z-index: 20;
 }
