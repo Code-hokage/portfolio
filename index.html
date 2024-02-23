@@ -21,13 +21,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins&display=swap');
     </style>
 
+    <!-- Email.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Pff1ybn3kMfr0w2CG",
+            });
+        })();
+    </script>
+
     <!-- title logo -->
     <!-- <link rel="icon" sizes="180x180" href="images/logo.png">
     <link rel="icon" type="image/png" href="/favicon-32x32" sizes="32x32"> -->
 
     <!-- sharing style with design page -->
     <!-- My style -->
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="style.css">
 
     <title>Adams Adinan</title>
 </head>
@@ -74,8 +85,6 @@
                     <a>Download Resume</a>
                 </div>
             </div>
-
-
 
         </nav>
     </header>
@@ -216,8 +225,10 @@
                         <p>CSS</p>
                         <p>JavaScript</p>
                         <p>React</p>
+                        <p>TypeScript</p>
                         <p>Node</p>
                         <p>Firebase</p>
+                        <p>Tailwind</p>
                         <p>Bootstrap</p>
                         <p>Git</p>
                         <p>Github</p>
@@ -252,7 +263,7 @@
                             <p>This is my Design portfolio that I also created using web dev tools I know. Check it out
                                 to have a sense of my design capabilites.</p>
                             <div class="visit pt-3">
-                                <a href="designPage/designIndex.html">visit</a>
+                                <a href="designPage/index.html">visit</a>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>
@@ -335,10 +346,9 @@
                 </div>
 
                 <!-- contact form/box -->
-
                 <div class="form-box">
-                    <form class="contact-form" method="POST" action="submit">
-                        <div class="cont">Contact Form</div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="cont">Contact me</div>
                         <div class="form-input">
                             <input id="name" type="text" placeholder="ex. Addy Sharawi" required>
                             <label for="name">Name</label>
@@ -350,20 +360,17 @@
                         </div>
 
                         <div class="form-input">
-                            <input type="text" id="subject"
-                                placeholder="ex. a collaboration proposal, a job offer, a support request, or any other specific topic."
-                                required >
+                            <input type="text" id="subject" name="subject" placeholder="ex. a collaboration proposal, a job offer, a support request, or any other specific topic." required >
                             <label for="subject">Subject</label>
                         </div>
 
                         <div class="form-input">
-                            <textarea required="" cols="30" rows="1" id="message"
-                                placeholder="elaborate on the subject"></textarea>
+                            <textarea required="" cols="30" rows="1" id="message" placeholder=""></textarea>
                             <label for="message">Message</label>
                         </div>
 
                         <div class="sendBtn d-flex justify-content-center align-items-center">
-                            <button type="submit" value="Submit Message">
+                            <button onclick="sendMail()" type="submit">
                                 SEND
                                 <span></span>
                             </button>
@@ -380,7 +387,7 @@
                     <div class="f-text text-start">
                         <h2 class="mb-2">ADAMS ADINAN</h2>
                         <p>Designed with rough sketches, coded in Visiual Studio Code. Built with Html, Css, JavaScript
-                            and front-end framework, <a href="https://getbootstrap.com/">Bootstrap,</a> and deployed
+                            and <a href="https://getbootstrap.com/">Bootstrap</a> and deployed
                             with <a href="https://vercel.com/">Vercel</a>.
                         </p>
                     </div>
@@ -416,7 +423,7 @@
 
 
     <!-- My script -->
-    <script src="myScript.js"></script>
+    <script src="index.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

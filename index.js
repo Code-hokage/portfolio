@@ -10,7 +10,7 @@ const mobileNav = document.querySelector('.mobileNavBar');
 const close = document.querySelector('.close i');
 
 toggler.addEventListener('click', () => {
-   mobileNav.classList.add('onMobile');
+    mobileNav.classList.add('onMobile');
 });
 
 close.addEventListener('click', () => {
@@ -77,82 +77,37 @@ function initClock() {
 }
 
 
-//contact form
-const contactForm = document.querySelector('.contact-form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const subjectInput = document.getElementById('subject');
-const messageInput = document.getElementById('message');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+//contact-form
+function sendMail() {
 
-    if (!validateForm()) {
-        return;
-    }
+    document.getElementById('contact-form').addEventListener('submit', e => {
+        e.preventDefault();
 
-    // Disable submit button to prevent multiple submissions
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
+        const serviceID = "service_2l56jgl";
+        const templateID = "template_tdvfoui";
 
-    const formData = new FormData(contactForm);
+        const inputFields = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+        };
 
-    try {
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Object.fromEntries(formData))
-        });
+        emailjs.send(serviceID, templateID, inputFields)
+            .then(() => {
+                console.log('SUCCESS!');
+                alert("Message sent successfully");
 
-        if (response.ok) {
-            alert('Email sent');
-            contactForm.reset();
-        } else {
-            alert('Something went wrong');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An unexpected error occurred');
-    } finally {
-        // Re-enable the submit button after the request completes
-        submitButton.disabled = false;
-    }
-});
+                name.value = "";
+                email.value = "";
+                subject.value = "";
+                message.value = "";
 
+            }, (error) => {
+                console.log('FAILED...', error);
+                alert("Someting went wrong");
+            });
+    });
 
-
-//Form validation
-function validateForm() {
-    let isValid = true;
-
-    // Validate name
-    if (nameInput.value.trim() === '') {
-        alert('Name is required');
-        isValid = false;
-    }
-
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value.trim())) {
-        alert('Invalid email address');
-        isValid = false;
-    }
-
-    // Validate subject
-    if (subjectInput.value.trim() === '') {
-        alert('Subject is required');
-        isValid = false;
-    }
-
-    // Validate message
-    if (messageInput.value.trim() === '') {
-        alert('Message is required');
-        isValid = false;
-    }
-
-    return isValid;
 };
-
-
