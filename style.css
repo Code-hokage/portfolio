@@ -123,6 +123,7 @@ nav .logo h2 {
 /* body */
 .web-content {
     width: 100vw;
+    overflow-x: hidden !important;
 }
 
 .side-menu {
