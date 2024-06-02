@@ -1,10 +1,10 @@
-// header
+// Sticky header
 const navbar = document.querySelector("body > header");
 window.addEventListener("scroll", function () {
-    navbar.classList.toggle("sticky", window.scrollY > 0)
+    navbar.classList.toggle("sticky", window.scrollY > 0);
 });
 
-//Responsive nav
+// Responsive navigation
 const toggler = document.querySelector('.mob-Navtoggler i');
 const mobileNav = document.querySelector('.mobileNavBar');
 const close = document.querySelector('.close i');
@@ -17,70 +17,73 @@ close.addEventListener('click', () => {
     mobileNav.classList.remove('onMobile');
 });
 
-// active side navbar
+// Active side navbar
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('.sidebar a, .mobNav-items a');
-let icons = document.querySelectorAll('.sidebar a i, .mobNav-items a i');
 
-window.onscroll = () => {
+window.addEventListener('scroll', () => {
+    let top = window.scrollY + 40;
     sections.forEach(sec => {
-        let top = window.scrollY;
         let offset = sec.offsetTop;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if (top + 40 >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('.sidebar a[href*=' + id + ']').classList.add('active');
-                document.querySelector('.mobileNavBar a[href*=' + id + ']').classList.add('active');
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (document.querySelector('.sidebar a[href*=' + id + ']')) {
+                    document.querySelector('.sidebar a[href*=' + id + ']').classList.add('active');
+                }
+                if (document.querySelector('.mobileNavBar a[href*=' + id + ']')) {
+                    document.querySelector('.mobileNavBar a[href*=' + id + ']').classList.add('active');
+                }
             });
-        };
+        }
     });
-};
+});
 
-// date and time
+// Date and time
 function updateClock() {
     const now = new Date();
-    let dname = now.getDay();
-    mo = now.getMonth();
-    dnum = now.getDate();
-    yr = now.getFullYear();
-    hou = now.getHours();
-    min = now.getMinutes();
-    sec = now.getSeconds();
-    pe = "AM";
+    const dname = now.getDay();
+    const mo = now.getMonth();
+    const dnum = now.getDate();
+    const yr = now.getFullYear();
+    let hou = now.getHours();
+    const min = now.getMinutes();
+    const sec = now.getSeconds();
+    let pe = "AM";
 
-    if (hou == 0) {
+    if (hou === 0) {
         hou = 12;
     }
     if (hou > 12) {
-        hou = hou - 12;
+        hou -= 12;
         pe = "PM";
     }
 
     Number.prototype.pad = function (digits) {
-        for (var n = this.toString(); n.length < digits; n = 0 + n);
-        return n;
+        return this.toString().padStart(digits, '0');
     }
 
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    let ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-    let values = [days[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe]
-    for (let i = 0; i < ids.length; i++)
-        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+    const values = [days[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+
+    ids.forEach((id, i) => {
+        document.getElementById(id).textContent = values[i];
+    });
 }
 
 function initClock() {
-    window.setInterval("updateClock()", 1);
+    updateClock();
+    setInterval(updateClock, 1000);
 }
 
-
-
-//contact-form
+// Contact form
 function sendMail() {
-
     document.getElementById('contact-form').addEventListener('submit', e => {
         e.preventDefault();
 
@@ -96,18 +99,11 @@ function sendMail() {
 
         emailjs.send(serviceID, templateID, inputFields)
             .then(() => {
-                console.log('SUCCESS!');
                 alert("Message sent successfully");
-
-                name.value = "";
-                email.value = "";
-                subject.value = "";
-                message.value = "";
-
+                document.getElementById("contact-form").reset();
             }, (error) => {
-                console.log('FAILED...', error);
-                alert("Someting went wrong");
+                console.error('Failed to send message:', error);
+                alert("Something went wrong");
             });
     });
-
-};
+}
